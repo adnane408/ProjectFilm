@@ -1,0 +1,52 @@
+.film-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.film-item img {
+  width: 100%;
+  height:auto; /* Hauteur fixe pour toutes les images */
+  object-fit: cover; /* Ajuster la taille pour remplir le conteneur sans déformer l'image */
+}
+
+.film-details {
+  margin-top: 10px;
+}
+.film-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.film-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.film-info {
+  margin: 0;
+  line-height: 1.6;
+}
+.film-item {
+  width: calc(15% - 20px); /* Ajuster la largeur en fonction de la taille de l'écran */
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  .film-item {
+    width: calc(27.33% - 10px); /* Ajuster la largeur pour les écrans moyens */
+  }
+}
+
+@media (max-width: 768px) {
+  .film-item {
+    width: calc(33% - 15px); /* Ajuster la largeur pour les écrans plus petits */
+  }
+}
+
+@media (max-width: 576px) {
+  .film-item {
+    width: calc(50% - 10px); /* Occuper toute la largeur sur les écrans très petits */
+  }
+}

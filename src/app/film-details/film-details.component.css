@@ -1,0 +1,109 @@
+/* Réinitialisation des marges et des rembourrages pour le corps de la page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle,#BE3144,#22092C);
+}
+
+/* Conteneur principal pour les détails du film */
+.film-details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px;
+
+}
+
+/* Conteneur de l'image du film */
+.image-container {
+  flex: 0 0 auto;
+  margin-right: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style de l'image */
+.image-container img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Style du corps de la carte des détails */
+.card-body {
+  flex: 1 1 auto;
+  background-color: #872341;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du titre du film */
+#filmTitle {
+  margin-top: 0;
+  font-size: 28px;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Style de l'année du film */
+#filmYear {
+  color: #777;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Style de la description du film */
+#filmDescription {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Style du lien pour voir plus */
+#filmLink {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #22092C;
+  color: #22092C;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#filmLink:hover {
+  background: radial-gradient(circle,#BE3144,#22092C);
+}
+#filmTitle,
+#filmYear,
+#filmDescription {
+  color: white;
+}
+@media (max-width: 768px) {
+  .film-details {
+    flex-direction: column; /* Mettre en colonne */
+    align-items: flex-start; /* Aligner au début */
+  }
+
+  .image-container {
+    margin-bottom: 20px; /* Ajouter un espace entre l'image et le texte */
+  }
+
+  #filmTitle,
+  #filmYear,
+  #filmDescription {
+    text-align: left; /* Aligner le texte à gauche */
+  }
+}
+.text-box {
+  background-color: rgba(135, 35, 65, 0.3); ; /* Couleur blanche avec une opacité de 0.7 */
+  padding: 20px; /* Ajoutez un peu de marge intérieure pour l'effet visuel */
+  border-radius: 10px; /* Ajoutez des coins arrondis à la boîte */
+}
+.d-inline-block{
+  color: #F5F5F5;
+}
+
+
+

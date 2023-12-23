@@ -1,0 +1,10 @@
+<div class="film-grid row">
+  <div class="film-item col-md-3 col-sm-6 col-xs-12" *ngFor="let film of films">
+    <app-film-item [film]="film"></app-film-item>
+  </div>
+</div>
+<div class="pagination " style="margin-right: 300px;">
+  <button (click)="previousPage()" [disabled]="page === 1">Previous</button>
+  <span style="color: #FB8B24">Page {{ page }}</span>
+  <button (click)="nextPage()">Next</button>
+</div>

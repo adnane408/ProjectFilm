@@ -1,0 +1,26 @@
+<div class="film-details" [ngStyle]="{'background-image': 'url(' + getUrl(film.backdrop_path) + ')'}" style="background-size: cover; ">
+  <div class="image-container">
+    <img src ="{{getUrl(film.poster_path)}}" id="filmImage" alt="Image du film">
+  </div>
+  <div class="card-body text-box">
+    <div> <!-- Div pour la boîte de texte transparente -->
+      <h2 id="filmTitle" style="font-size: 70px; text-shadow: #FC0 1px 0 10px;">{{film.title}}</h2>
+      <p id="filmYear"><fa-icon [icon]="favorite"></fa-icon><strong>&nbsp; Release Date : </strong>{{film.release_date}}
+      </p>
+      <div class="d-inline-block mr-2">
+      <p><fa-icon [icon]="time"></fa-icon>  <strong>&nbsp;Runtime:  </strong> {{ film.runtime }} minutes</p>
+      <p><fa-icon [icon]="popular"></fa-icon> <strong>&nbsp;Popularity:</strong> {{ film.popularity }}</p>
+      <p><fa-icon [icon]="vote"></fa-icon>  <strong>&nbsp;Vote Average:</strong> {{ film.vote_average }}</p>
+      <p><fa-icon [icon]="moneu"></fa-icon>  <strong>&nbsp;Budget:</strong> {{ film.budget }}$</p>
+      </div>
+      <p class="shadow" style="text-shadow: #FC0 1px 0 10px; color: #FB8B24;font-size: 20px;">{{film.tagline}}</p>
+      <h3 style="font-size: 30px; text-shadow: #FC0 1px 0 10px;" >Synopsis</h3>
+      <p id="filmDescription">{{film.overview}}</p>
+      <div *ngFor="let gn of genre" class="d-inline-block mr-2">
+        <button style="background-color: #F99417;margin-left: 10px;color: beige">{{ gn.name }}</button>
+      </div>
+      <button type="button" class="btn btn-outline-warning" style="margin-left: 10px;">+ Add To Favoris</button>
+    </div>
+  </div>
+</div>
+<app-commentaire> test</app-commentaire>

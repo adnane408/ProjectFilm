@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8">
+      <h3 class="mb-3" style="color: #F5F5F5">Comments</h3>
+      <!-- Add a form for submitting comments -->
+      <form>
+        <div class="mb-3">
+          <label for="nom" class="form-label" style="color: #F5F5F5">Nom</label>
+          <input type="text" class="form-control" id="nom" [(ngModel)]="formData.nom" name="nom" required >
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">Leave a Comment:</label>
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu  [editor]="editor"> </ngx-editor-menu>
+            <ngx-editor style="height: 300px; width: 100%;" [editor]="editor" [ngModel]="html" [disabled]="false" id="comment" [(ngModel)]="formData.comment"  name="comment" [placeholder]="'Type here...'"></ngx-editor>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Comment</button>
+      </form>
+    </div>
+  </div>
+</div>

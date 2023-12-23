@@ -1,0 +1,49 @@
+.card {
+    width: 200px; /* Ajustez la largeur de la carte */
+    height: 300px; /* Ajustez la hauteur de la carte */
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.zoom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir entièrement la zone de l'image */
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoom-image:hover {
+    transform: scale(1.1); /* Zoom au survol */
+}
+
+.card-body {
+  color: #F5F5F5;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  background: radial-gradient(circle,#BE3144,#22092C);;
+    padding: 5px; /* Réduire le rembourrage */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Classes pour réduire la taille de la police et des éléments */
+.smaller {
+  color: #F5F5F5;
+    font-size: 0.8em; /* Réduire la taille de la police */
+    margin-bottom: 5px; /* Réduire la marge */
+}
+
+.image-container:hover .card-body {
+    display: block;
+}
+
+.image-container:hover .card-overlay {
+    background-color: rgba(0, 0, 0, 0); /* Changer la couleur d'arrière-plan de la superposition */
+}

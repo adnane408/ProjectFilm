@@ -1,0 +1,13 @@
+<div class="card card-small">
+  <div class="image-container">
+    <img src="{{getUrl(film.poster_path)}}" class="card-img-top zoom-image" alt="...">
+    <div class="card-overlay">
+      <div class="card-body">
+        <h5 class="card-title smaller">{{film.id}}-{{film.title}}</h5>
+        <h6 class="smaller">Année :{{film.release_date}}</h6>
+        <p class="card-text smaller" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-height: 3em;">{{film.overview}}.</p>
+        <a [routerLink]="['/film-details',film.id ]" class="btn btn-primary smaller" [style.background]="'#22092C'">Show More</a>
+      </div>
+    </div>
+  </div>
+</div>
