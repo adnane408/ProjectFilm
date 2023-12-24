@@ -9,6 +9,7 @@ import {faCalendar} from "@fortawesome/free-solid-svg-icons/faCalendar";
 import {faPeopleGroup} from "@fortawesome/free-solid-svg-icons/faPeopleGroup";
 import {faVoteYea} from "@fortawesome/free-solid-svg-icons/faVoteYea";
 import {faMoneyBill} from "@fortawesome/free-solid-svg-icons/faMoneyBill";
+import {FavorisService} from "../../favoris.service";
 @Component({
   selector: 'app-film-details',
   templateUrl: './film-details.component.html',
@@ -23,15 +24,29 @@ export class FilmDetailsComponent {
   popular=faPeopleGroup
   vote = faVoteYea
   moneu=faMoneyBill
+  isFavorite: boolean = false;
 
-  constructor(private route: ActivatedRoute, private filmService: FilmServiceService) { }
+  constructor(private route: ActivatedRoute, private filmService: FilmServiceService,private favorisService:FavorisService) { }
 
   ngOnInit() {
+    // Récupérez les détails du film et vérifiez s'il est dans les favoris
     const id = +this.route.snapshot.paramMap.get('id');
     this.getFilmDetails(id);
-
+ 
+    // Vérifier si le film est dans les favoris et mettre à jour isFavorite
+    this.favorisService.getFavoris().subscribe((favoris) => {
+      this.isFavorite = favoris.some(film => film.id === id);
+    });
   }
-
+  toggleFavori() {
+    if (this.isFavorite) {
+      this.favorisService.removeFavori(this.film);
+    } else {
+      this.favorisService.toggleFavori(this.film);
+    }
+    // Inverser l'état isFavorite après le toggle
+    this.isFavorite = !this.isFavorite;
+  }
   getFilmDetails(id: number): void {
     this.filmService.getFilmById(id).subscribe(
       (data: any) => {
@@ -46,5 +61,6 @@ export class FilmDetailsComponent {
   getUrl(name : any){
     return this.filmService.getimagefromapi(name);
   }
+
 
 }

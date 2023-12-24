@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProjectCLass';
+  ngOnInit() {
+    localStorage.clear(); // Efface le localStorage au démarrage de l'application
+  }
 }

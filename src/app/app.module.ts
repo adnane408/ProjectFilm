@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 import { NgxEditorModule } from 'ngx-editor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FilmsFavorisComponent } from './films-favoris/films-favoris.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BodyComponent,
     FilmDetailsComponent,
     CommentaireComponent,
+    FilmsFavorisComponent,
   ],
     imports: [
         BrowserModule,

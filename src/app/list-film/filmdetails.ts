@@ -4,6 +4,7 @@ import {ProductionCompany} from "./productionCompany";
 import {SpokenLanguage} from "./spokenLanguage";
 
 export interface Filmdetails {
+  isFavorite:boolean;
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: null | any; // You may update this type based on the actual data

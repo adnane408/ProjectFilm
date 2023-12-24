@@ -19,7 +19,9 @@
       <div *ngFor="let gn of genre" class="d-inline-block mr-2">
         <button style="background-color: #F99417;margin-left: 10px;color: beige">{{ gn.name }}</button>
       </div>
-      <button type="button" class="btn btn-outline-warning" style="margin-left: 10px;">+ Add To Favoris</button>
+      <button type="button" class="btn btn-outline-warning" (click)="toggleFavori()">
+        {{ isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
+      </button>
     </div>
   </div>
 </div>
