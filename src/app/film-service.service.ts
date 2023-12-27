@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {FilmModel} from "./list-film/Film.model";
+import {Commentaire} from "./list-film/Commentaire";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import {FilmModel} from "./list-film/Film.model";
 export class FilmServiceService {
   private apiKey = 'aef615ddf7416ff3f859c9d357a498c9';
   private baseUrl = 'https://api.themoviedb.org/3';
+  backendUrl= "http://localhost:8080"
   private filteredMoviesSource = new BehaviorSubject<FilmModel[]>([]);
   filteredMovies$: Observable<FilmModel[]> = this.filteredMoviesSource.asObservable();
 
@@ -33,5 +35,13 @@ export class FilmServiceService {
   }
   updateFilteredMovies(movies: FilmModel[]) {
     this.filteredMoviesSource.next(movies);
+  }
+  addComment(commentData: Commentaire): Observable<any> {
+    console.log(commentData);
+    return this.http.post(`${this.backendUrl}/comment`, commentData);
+  }
+
+  getComments(id:number): Observable<Commentaire[]> {
+    return this.http.get<Commentaire[]>(`${this.backendUrl}/${id}/comments`);
   }
 }

@@ -1,10 +1,4 @@
 /* Réinitialisation des marges et des rembourrages pour le corps de la page */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle,#BE3144,#22092C);
-}
 
 /* Conteneur principal pour les détails du film */
 .film-details {
@@ -104,6 +98,44 @@ body {
 .d-inline-block{
   color: #F5F5F5;
 }
+/* Styles pour la section des commentaires */
+.comment-section {
+  margin-top: 20px;
+}
 
+/* Style pour chaque commentaire individuel */
+.comment {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+/* Style pour l'en-tête du commentaire */
+.comment-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style pour le corps du commentaire */
+.comment-body {
+  color: #333;
+}
+
+/* Optionnel : Style pour distinguer les commentaires */
+.comment:nth-child(even) {
+  background-color: #eaeaea;
+}
+.no-comments-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
 
 

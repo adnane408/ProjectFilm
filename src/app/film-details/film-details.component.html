@@ -25,4 +25,32 @@
     </div>
   </div>
 </div>
-<app-commentaire> test</app-commentaire>
+<div>
+  <p>
+<app-commentaire [filmId]="film.id"></app-commentaire>
+  </p>
+<!-- Insérez la section des commentaires ici -->
+<!-- Votre structure HTML existante -->
+
+<h3>Commentaires</h3>
+<div class="comment-section">
+  <div *ngIf="comments.length > 0">
+    <!-- Structure pour afficher les commentaires existants -->
+    <div *ngFor="let comment of comments" class="comment">
+      <div class="comment-header">
+        <strong>{{ comment._email }}</strong>
+      </div>
+      <div class="comment-body">
+        {{ comment._text }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="comments.length === 0" class="no-comments-message">
+    <!-- Message stylisé en cas d'absence de commentaires -->
+    <p>Aucun commentaire disponible pour ce film.</p>
+  </div>
+</div>
+</div>
+
+<!-- Votre structure HTML existante -->
+

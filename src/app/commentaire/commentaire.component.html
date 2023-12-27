@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <h3 class="mb-3" style="color: #F5F5F5">Comments</h3>
       <!-- Add a form for submitting comments -->
-      <form>
+      <form (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label for="nom" class="form-label" style="color: #F5F5F5">Nom</label>
           <input type="text" class="form-control" id="nom" [(ngModel)]="formData.nom" name="nom" required >
